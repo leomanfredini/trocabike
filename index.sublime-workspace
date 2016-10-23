@@ -1,0 +1,301 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"us",
+				"user"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/var/www/html/webprovas/app/Controller/QuestionsController.php",
+		"/var/www/html/trocabike/app/View/Pages/home.ctp",
+		"/var/www/html/trocabike/app/View/Users/register.ctp",
+		"/var/www/html/trocabike/app/View/Layouts/default.ctp",
+		"/var/www/html/trocabike/app/Model/User.php",
+		"/var/www/html/trocabike/app/Controller/UsersController.php",
+		"/var/www/html/webprovas/app/View/Users/index.ctp",
+		"/var/www/html/trocabike-cake2/app/View/Layouts/default.ctp",
+		"/var/www/html/trocabike/app/View/Users/index.ctp",
+		"/var/www/html/trocabike/app/webroot/css/cake.generic.css",
+		"/var/www/html/trocabike/app/Config/core.php",
+		"/var/www/html/trocabike/app/View/Elements/navbar-right.ctp",
+		"/var/www/html/trocabike-cake3/vendor/cakephp-brasil/twitter-bootstrap/src/Template/Layout/default.ctp",
+		"/var/www/html/trocabike-cake3/vendor/cakephp-brasil/twitter-bootstrap/src/Template/Element/nav-bar-left.ctp",
+		"/var/www/html/trocabike/app/View/Users/view.ctp",
+		"/var/www/html/webprovas/app/Model/User.php",
+		"/var/www/html/cakephp/app/Controller/ProductsController.php",
+		"/var/www/html/webprovas/app/View/Users/add_user.ctp",
+		"/var/www/html/webprovas/app/View/Users/edit_user.ctp",
+		"/var/www/html/cakephp/.htaccess",
+		"/var/www/html/cakephp/app/View/Products/add.ctp",
+		"/var/www/html/cakephp/app/Model/Product.php",
+		"/var/www/html/trocabike/app/View/Users/register1.ctp",
+		"/var/www/html/trocabike/app/View/Users/register2.ctp",
+		"/var/www/html/trocabike/app/View/Users/register (cópia).ctp",
+		"/var/www/html/cakephp/app/View/Categories/add.ctp",
+		"/var/www/html/trocabike/app/Plugin/BoostCake/View/Layouts/bootstrap3.ctp",
+		"/var/www/html/cakephp/app/Plugin/BoostCake/View/Helper/BoostCakeFormHelper.php",
+		"/var/www/html/trocabike/.htaccess",
+		"/var/www/html/cakephp/app/.htaccess",
+		"/var/www/html/trocabike/app/Controller/AppController.php",
+		"/var/www/html/trocabike/app/Plugin/BoostCake/View/Helper/BoostCakeFormHelper.php",
+		"/var/www/html/cakephp/app/composer.json",
+		"/var/www/html/trocabike/composer.json",
+		"/var/www/html/trocabike/app/composer.json",
+		"/var/www/html/cakephp/app/Plugin/BoostCake/View/Layouts/bootstrap3.ctp",
+		"/var/www/html/cakephp/app/Plugin/BoostCake/Model/BoostCake.php",
+		"/var/www/html/cakephp/app/Plugin/BoostCake/Controller/BoostCakeController.php",
+		"/var/www/html/trocabike-cake3/src/Template/Start/index.ctp",
+		"/var/www/html/trocabike-cake3/vendor/cakephp-brasil/twitter-bootstrap/src/Template/Bake/Template/index.ctp",
+		"/var/www/html/trocabike-cake3/vendor/cakephp-brasil/twitter-bootstrap/src/Template/Layout/adminlte.ctp",
+		"/var/www/html/cakephp/app/Controller/AppController.php",
+		"/var/www/html/trocabike-cake3/vendor/cakephp-brasil/twitter-bootstrap/src/Template/Element/footer.ctp",
+		"/var/www/html/trocabike-cake3/vendor/cakephp-brasil/twitter-bootstrap/src/Template/Element/nav-bar-right.ctp",
+		"/var/www/html/trocabike-cake3/src/Template/Layout/default.ctp",
+		"/var/www/html/trocabike-cake3/webroot/index.php",
+		"/var/www/html/cakephp/app/View/Products/index.ctp",
+		"/var/www/html/cakephp/app/View/Layouts/default.ctp",
+		"/var/www/html/trocabike/app/Config/bootstrap.php",
+		"/var/www/html/cakephp/app/Config/bootstrap.php",
+		"/var/www/html/cakephp/app/View/Products/view.ctp",
+		"/var/www/html/cakephp/composer.json",
+		"/var/www/html/cakephp/app/Model/Category.php",
+		"/var/www/html/webprovas/app/Controller/UsersController.php",
+		"/var/www/html/cakephp/app/Config/core.php",
+		"/var/www/html/cakephp/app/View/Categories/view.ctp",
+		"/var/www/html/cakephp/app/Config/routes.php",
+		"/var/www/html/trocabike/app/Model/Proposal.php",
+		"/var/www/html/webprovas/app/Model/Question.php",
+		"/var/www/html/webprovas/app/View/Users/login.ctp",
+		"/var/www/html/cakephp/app/Config/database.php",
+		"/var/www/html/webprovas/app/Model/Grade.php",
+		"/var/www/html/webprovas/app/Model/Category.php",
+		"/root/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/root/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/var/www/html/trocabike/app/Model/Product.php",
+		"/var/www/html/trocabike/app/Model/Transaction.php",
+		"/var/www/html/trocabike/app/Model/Comment.php",
+		"/var/www/html/trocabike/app/Model/Category.php",
+		"/var/www/html/trocabike/app/Controller/CategoriesController.php",
+		"/var/www/html/trocabike/app/Controller/CommentsController.php",
+		"/var/www/html/trocabike/app/Controller/ProductsController.php",
+		"/var/www/html/trocabike/app/Controller/ProposalsController.php",
+		"/var/www/html/trocabike/app/Controller/TransactionsController.php",
+		"/var/www/html/webprovas/app/Model/Exam.php",
+		"/var/www/html/trocabike/app/Controller/PagesController.php",
+		"/var/www/html/trocabike/app/Controller/ProductController.php",
+		"/var/www/html/trocabike/app/Controller/CategoryController.php",
+		"/var/www/html/trocabike/app/Controller/ProposalController.php",
+		"/var/www/html/trocabike/app/Controller/TransactionController.php",
+		"/var/www/html/trocabike/app/Controller/CommentController.php",
+		"/var/www/html/trocabike/app/Controller/UserController.php",
+		"/var/www/html/webprovas/.htaccess",
+		"/var/www/html/trocabike/src/Controller/CategoriasController.php",
+		"/var/www/html/webprovas/app/Controller/PagesController.php",
+		"/var/www/html/trocabike/src/Controller/StartController.php",
+		"/var/www/html/webprovas/app/Config/routes.php",
+		"/var/www/html/trocabike/config/routes.php",
+		"/var/www/html/trocabike/src/Controller/ComentariosController.php",
+		"/var/www/html/trocabike/src/Controller/ProdutosController.php",
+		"/var/www/html/trocabike/src/Controller/PropostasController.php",
+		"/var/www/html/trocabike/src/Controller/TransacoesController.php",
+		"/var/www/html/trocabike/src/Controller/UsuariosController.php",
+		"/var/www/html/trocabike/app/Config/database.php",
+		"/var/www/html/webprovas/app/View/Pages/home.ctp",
+		"/var/www/html/trocabike/src/Template/Start/index.ctp",
+		"/var/www/html/webprovas/app/View/Pages/start.ctp",
+		"/var/www/html/trocabike/src/Controller/PagesController.php",
+		"/var/www/html/trocabike-cake3/.htaccess",
+		"/var/www/html/webprovas/app/Config/database.php",
+		"/var/www/html/trocabike/Documento sem título",
+		"/var/www/html/trocabike/app/.htaccess",
+		"/var/www/html/trocabike/src/Application.php",
+		"/var/www/html/trocabike/src/Controller/UsuarioController.php",
+		"/var/www/html/trocabike/src/Template/Element/footer.ctp",
+		"/var/www/html/trocabike/src/Template/Element/head.ctp",
+		"/var/www/html/trocabike/src/Template/Element/header.ctp",
+		"/var/www/html/trocabike/src/Template/Element/categorias.ctp",
+		"/var/www/html/trocabike/src/Template/Start/usuario.ctp",
+		"/var/www/html/trocabike/src/Template/Layout/default.ctp",
+		"/var/www/html/trocabike/src/Controller/AppController.php",
+		"/var/www/html/trocabike/src/View/AppView.php",
+		"/var/www/html/webprovas/app/Config/core.php",
+		"/var/www/html/webprovas/app/Config/bootstrap.php",
+		"/var/www/html/webprovas/app/Config/acl.php",
+		"/var/www/html/webprovas/app/Config/acl.ini.php",
+		"/var/www/html/webprovas/app/index.php",
+		"/var/www/html/webprovas/app/.htaccess",
+		"/var/www/html/teste/README.md",
+		"/var/www/html/trocabike/vendor/cakephp-brasil/twitter-bootstrap/src/Template/Element/nav-bar-left.ctp",
+		"/var/www/html/trocabike/src/Template/Element/nav-bar-right.ctp",
+		"/var/www/html/trocabike/src/Template/Element/Documento sem título",
+		"/var/www/html/trocabike/config/bootstrap.php",
+		"/var/www/html/trocabike/src/Template/Element/Layout/frontend.ctp",
+		"/root/.cache/.fr-714MSQ/trocabike/src/Template/Start/index.ctp",
+		"/var/www/html/trocabike/src/Template/Pages/home.ctp",
+		"/var/www/html/trocabike/vendor/cakephp-brasil/twitter-bootstrap/src/Template/Layout/default.ctp",
+		"/var/www/html/trocabike/vendor/cakephp-brasil/twitter-bootstrap/src/Template/Element/nav-bar-right.ctp"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"/",
+			"jquery",
+			"jquer",
+			"jquery",
+			"OAuth"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
