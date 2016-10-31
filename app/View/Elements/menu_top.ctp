@@ -6,7 +6,7 @@
         if ($this->Session->check('User_id')) { ?>
             <a href="#" class="cart-link">Olá <?php echo $this->Session->read('User_name'); ?></a>
             <div class="cl">&nbsp;</div>
-            <span><strong><?php echo $this->Html->link('Sua Conta', ['controller' => 'users', 'action' => 'login'], ['class' => 'field']); ?></strong></span>
+            <span><strong><?php echo $this->Html->link('Minha Conta', ['controller' => 'users', 'action' => 'actions'], ['class' => 'field']); ?></strong></span>
             &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
             <span><strong><?php echo $this->Html->link('Sair', ['controller' => 'users', 'action' => 'logout'], ['class' => 'field']); ?></strong></span>
     <?php } else { ?>

@@ -3,33 +3,29 @@
 <?php echo $this->Form->create('User'); ?>
 
  <fieldset>
-<h2>Cadastro de Novo Usuário<span></span></h2>
+<h2>Dados do Usuário<span></span></h2>
 <div class="forms-content">
 
 
     <?php echo $this->Form->input('name', array(
       'label' => 'Nome',
-      'class' => 'field',
-      'placeholder' => 'Digite seu primeiro nome'      
+      'class' => 'field'   
     )); ?>
 
     <?php echo $this->Form->input('surname', array(
       'label' => 'Sobrenome',
-      'class' => 'field',
-      'placeholder' => 'Digite seu sobrenome'      
+      'class' => 'field'
     )); ?>
 
     <?php echo $this->Form->input('email', array(
       'label' => 'Email',
       'class' => 'field',
-      'placeholder' => 'Digite seu endereço de email',
       'type' => 'email'
     )); ?>
 
     <?php echo $this->Form->input('cpf', array(
       'label' => 'CPF',
       'class' => 'small-field',
-      'placeholder' => 'Somente números, sem os pontos',
       'type' => 'number'
     )); ?>
 
@@ -38,7 +34,7 @@
         'text' => 'Selecione o Gênero'
       ),
       'empty' => '',
-      'class' => 'field',
+      'class' => 'small-field',
       'options' => array(
         1 => 'Masculino',
         2 => 'Feminino'
@@ -48,31 +44,31 @@
 
     <?php echo $this->Form->input('phone', array(
       'label' => 'Telefone',
-      'class' => 'small-field',
-      'placeholder' => 'Somente números',
+      'class' => 'small-field',     
       'type' => 'number'
     )); ?>
 
 
     <?php echo $this->Form->input('username', array(
-      'label' => 'Nome de Usuário',
-      'class' => 'small-field',
-      'placeholder' => 'Digite o login desejado',
-      'type' => 'text'
+      'label' => 'Nome de Usuário (Não pode ser alterado)',
+      'class' => 'small-field',      
+      'type' => 'text',
+      'readonly' => 'readonly'
     )); ?>
 
-    <?php echo $this->Form->input('password', array(
-      'placeholder' => 'Mínimo 6 caracteres',
+    <?php echo $this->Form->input('password_update', array(      
+      'label' => 'Senha',
       'class' => 'small-field',
-      'type' => 'password'
+      'type' => 'password',
+      'required' => 0
     )); ?>
 
 
-    <?php echo $this->Form->input('password_confirm', array(
+    <?php echo $this->Form->input('password_confirm_update', array(
       'label' => 'Confirmar Senha',
-      'class' => 'small-field',
-      'placeholder' => 'Repita sua senha',
-      'type' => 'password'
+      'class' => 'small-field',     
+      'type' => 'password',
+      'required' => 0
     )); ?>
 
     <br>
@@ -151,10 +147,10 @@
       'class' => 'small-field',
       'type' => 'number'     
     )); ?>
-
+    
 
     <br><br>
-    <?php echo $this->Form->submit('Registrar', array(
+    <?php echo $this->Form->submit('Alterar Dados', array(
       'div' => 'form-group',
       'class' => 'btn btn-primary'
     )); ?>

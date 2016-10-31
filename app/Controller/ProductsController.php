@@ -9,22 +9,45 @@ class ProductsController extends AppController {
 
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow('index');
+		$this->Auth->allow('index', 'filter');
 	}
 
 
 	public function index() {
-		$conditions = array();
-		//$userId = $this->Auth->user('id');
 
-		// if ($this->Auth->user('role') != 'admin'){
-		// 	$conditions['Exam.user_id'] =  $userId;			
-		// }
+		$conditions = array();
 
 		$this->paginate = ['conditions' => $conditions];
 
 		$lista = $this->paginate();
 		$this->set('products', $lista);	
+	}
+
+
+
+
+	public function filter($id = null) {
+		$options = array(			
+			'conditions' => array('Product.category_id' => $id),			
+			'limit' => 10
+		);
+
+		$this->paginate = $options;
+
+		$lista = $this->paginate('Product');
+		$this->set('products', $lista);
+	
+	}
+
+
+
+
+	public function view($id = null) {
+		$this->Product->id = $id;
+		if(!$this->product->exists()) {
+			throw new Exception('Produto Inexistente');
+		}
+		$this->set('product', $this->Product->findById($id));
 	}
 
 

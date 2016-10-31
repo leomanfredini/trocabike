@@ -59,6 +59,7 @@ class AppController extends Controller {
 	//Executada antes de qualquer outra função
 	public function beforeFilter(){
 		$this->Auth->allow('login', 'home', 'logout');
+		$this->Auth->authError = ('Você precisa estar logado para acessar esta área.');
 	}
 
 

@@ -4,7 +4,7 @@
     ?>
     <ul>
     <?php foreach ($categories as $category): ?>
-        <li><a><?php echo $category['Category']['name']; ?></a></li>
+        <li><?php echo $this->Html->link($category['Category']['name'], ['controller' => 'products' , 'action' => 'filter', $category['Category']['id']]); ?></li>
     <?php endforeach; ?>
     </ul>
 </div>  

@@ -2,7 +2,7 @@
 
 
 
-<?php echo $this->Form->create('User'); ?>
+<?php echo $this->Form->create('Product'); ?>
 
  <fieldset>
 <h2>Meus Dados<span></span></h2>

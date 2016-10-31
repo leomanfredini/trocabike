@@ -50,6 +50,48 @@ public $validate = [
 			],
 		],
 
+		'address' => [
+			'required' => [
+				'rule' => 'notBlank',
+				'message' => 'Rua, Avenida, Travessa, etc',
+			],
+		],
+
+		'number' => [
+			'required' => [
+				'rule' => 'notBlank',				
+			],
+		],
+
+
+		'district' => [
+			'required' => [
+				'rule' => 'notBlank',
+				'message' => 'Insira seu bairro',
+			],
+		],
+
+		'city' => [
+			'required' => [
+				'rule' => 'notBlank',
+				'message' => 'Insira usua cidade',
+			],
+		],
+
+		'state' => [
+			'required' => [
+				'rule' => 'notBlank',
+				'message' => 'Selecione seu estado',
+			],
+		],
+
+		'cep' => [
+			'required' => [
+				'rule' => 'notBlank',
+				'message' => 'Insira o CEP',
+			],
+		],
+
 		'cpf' => [
 			'required' => [
 				'rule' => 'notBlank',
@@ -70,7 +112,18 @@ public $validate = [
 				'rule' => ['equalFields', 'password'],
 				'message' => 'Senhas não Conferem'
 			]
-		],		
+		],	
+
+		'password_update' => ['rule' => 'blank',
+        'on' => 'create'],		
+
+		'password_confirm_update' => [
+			'equalFields' => [
+				'rule' => ['equalFields', 'password_update'],
+				'message' => 'Senhas não Conferem',
+				'requred' => false
+			]					
+		],	
 
 
 
@@ -82,6 +135,11 @@ public $validate = [
 		if (isset($this->data[$this->alias]['password'])) {
 			$hasher = new BlowfishPasswordHasher();
 			$this->data[$this->alias]['password'] = $hasher->hash($this->data[$this->alias]['password']);
+		}
+
+		if (isset($this->data[$this->alias]['password_update']) && !empty($this->data[$this->alias]['password_update'])) {
+			$hasher = new BlowfishPasswordHasher();
+			$this->data[$this->alias]['password'] = $hasher->hash($this->data[$this->alias]['password_update']);
 		}
 
 		return true;
