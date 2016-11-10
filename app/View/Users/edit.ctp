@@ -31,10 +31,10 @@
 
     <?php echo $this->Form->input('genre', array(
       'label' => array(
-        'text' => 'Selecione o Gênero'
+        'text' => 'Gênero'
       ),
       'empty' => '',
-      'class' => 'small-field',
+      'class' => 'field',
       'options' => array(
         1 => 'Masculino',
         2 => 'Feminino'

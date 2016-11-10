@@ -9,13 +9,13 @@ class ProductsController extends AppController {
 
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow('index', 'filter');
+		$this->Auth->allow('index', 'filter', 'view');
 	}
 
 
 	public function index() {
 
-		$conditions = array();
+		$conditions = array('Product.active' => true);
 
 		$this->paginate = ['conditions' => $conditions];
 
@@ -44,9 +44,9 @@ class ProductsController extends AppController {
 
 	public function view($id = null) {
 		$this->Product->id = $id;
-		if(!$this->product->exists()) {
-			throw new Exception('Produto Inexistente');
-		}
+		// if(!$this->product->exists()) {
+		// 	throw new Exception('Produto Inexistente');
+		// }
 		$this->set('product', $this->Product->findById($id));
 	}
 
@@ -70,6 +70,15 @@ class ProductsController extends AppController {
 		$categories = $this->Product->Category->find('list', ['order' => 'Category.name ASC']);
 		$this->set(compact('categories'));
 
+	}
+
+
+	public function myproducts() {
+		$userId = $this->Auth->user('id');
+		$conditions['Product.user_id'] =  $userId;
+		$this->paginate = ['conditions' => $conditions];
+		$lista = $this->paginate();
+		$this->set('products', $lista);	
 	}
 
 }

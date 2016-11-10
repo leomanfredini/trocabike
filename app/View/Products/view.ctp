@@ -5,89 +5,68 @@
 <?php echo $this->Form->create('Product'); ?>
 
  <fieldset>
-<h2>Meus Dados<span></span></h2>
+<h2><span></span></h2>
 <div class="forms-content">
 
-    <strong>Nome: </strong>    
-    <?php  echo $user['User']['name'] . '&nbsp;&nbsp;' . $user['User']['surname']; ?>
-    <br>
-    <br>
 
-    <strong>Email: </strong>
-    <?php  echo $user['User']['email']; ?>
-    <br>
-    <br>
 
-    <strong>CPF: </strong>
-    <?php  echo $user['User']['cpf']; ?>
-    <br>
-    <br>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-width:0px;border-style:solid;margin:0px auto;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+.tg .tg-s6z2{text-align:center}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-yw4l{vertical-align:top}
+.tg .tg-uiv9{vertical-align:bottom}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-baqh" colspan="3"><h1><?php echo $product['Product']['title']; ?></h1></th>
+  </tr>
+  <tr>
+    <td class="tg-s6z2" rowspan="3"><?php echo $this->Html->image(basename($product['Product']['filename']), ['width' => '227px','alt'=>'Produto']); ?></td>
+    <td class="tg-yw4l">&nbsp;&nbsp;</td>
+    <td class="tg-uiv9"><strong>Especificações</strong></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l" rowspan="3"><?php echo $product['Product']['long_description']; ?></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"></td>
+  </tr>
+  <tr>
+    <td class="tg-s6z2"><strong class="price"><?php echo $this->Number->currency($product['Product']['price'], 'EUR') ?></strong></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+  <tr>
+    <td class="tg-s6z2" rowspan="2"><a href="#" class="button-product-purchase">COMPRAR</a></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-031e"><strong>Estado de Uso: </strong>
+        <?php 
+            if ($product['Product']['state'] == 1) {
+                echo "Novo";
+            } else {
+                echo "Usado";        
+            }
+        ?></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"></td>
+    <td class="tg-031e"><strong>Peso: </strong><?php echo $product['Product']['weight']; ?> gramas</td>
+  </tr>
+  <tr>
+    <td class="tg-s6z2" rowspan="2"><?php echo $this->Html->link('ENVIAR PROPOSTA', ['controller' => 'proposals', 'action' => 'send', $product['Product']['id']], ['class' => 'button-product-proposal']); ?></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"><strong>Altura: </strong><?php echo $product['Product']['width']; ?> cm</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"><strong>Largura: </strong><?php echo $product['Product']['height']; ?> cm</td>
+  </tr>
+</table>
 
-    <strong>Genero: </strong>
-    <?php  
-      if ($user['User']['genre'] == '1'){
-        echo "Masculino";
-      } else {
-        echo "Feminino";
-      }
-    ?>
-    <br>
-    <br>
 
-    <strong>Telefone: </strong>
-    <?php  echo $user['User']['phone']; ?>
-    <br>
-    <br>
-
-    <strong>Nome de usuário: </strong>
-    <?php  echo $user['User']['username']; ?>
-    <br>
-    <br>
-
-    <strong>Senha: </strong>
-    <?php  echo "******"; ?>
-    <br>
-    <br>
-    <br>
-
-    <strong>Endereço: </strong>
-    <?php  echo $user['User']['address']; ?>
-    <br>
-    <br>
-
-    <strong>Número: </strong>
-    <?php  echo $user['User']['number']; ?>
-    <br>
-    <br>
-
-    <strong>Complemento: </strong>
-    <?php  echo $user['User']['complement']; ?>
-    <br>
-    <br>
-
-    <strong>Bairro: </strong>
-    <?php  echo $user['User']['district']; ?>
-    <br>
-    <br>
-
-    <strong>Cidade: </strong>
-    <?php  echo $user['User']['city']; ?>
-    <br>
-    <br>
-
-    <strong>Estado: </strong>
-    <?php  echo $user['User']['state']; ?>
-    <br>
-    <br>
-
-    <strong>CEP: </strong>
-    <?php  echo $user['User']['cep']; ?>
-    <br>
-    <br>
-
-    <?php
-      echo $this->Html->link("Alterar Dados", array('controller' => 'Users','action'=> 'edit', $user['User']['id']), array( 'class' => 'input'))
-    ?>
 
     <?php echo $this->Form->end(); ?>
 

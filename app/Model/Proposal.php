@@ -11,6 +11,10 @@ class Proposal extends AppModel {
             'className' => 'Product',
             'foreignKey' => 'product_id'            
         ],
+        // 'User' => [
+        //     'className' => 'User',
+        //     'foreignKey' => 'buyer_id'            
+        // ],
         
     ];
 
