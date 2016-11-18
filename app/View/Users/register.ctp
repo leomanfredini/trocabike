@@ -151,13 +151,15 @@
       'class' => 'small-field',
       'type' => 'number'     
     )); ?>
-
+    <br>
+    <?php echo $this->Recaptcha->display(); ?>
 
     <br><br>
     <?php echo $this->Form->submit('Registrar', array(
       'div' => 'form-group',
       'class' => 'btn btn-primary'
     )); ?>
+
 
     <?php echo $this->Form->end(); ?>
     </div>

@@ -113,3 +113,6 @@ CakeLog::config('error', array(
 CakePlugin::loadAll();
 setlocale(LC_ALL, 'pt_BR.utf-8', 'pt_BR', 'pt-br');
 // http://cauancabral.net/2012/04/18/cakephp-plugin-locale/
+
+Configure::write('Recaptcha.publicKey', '6LejCgwUAAAAAOdyc0aTE7DVEuIVAizACzmTUeUH');
+Configure::write('Recaptcha.privateKey', '6LejCgwUAAAAAFESiSBtqFe2ft57r51DamRGNtmU');

@@ -30,7 +30,7 @@
     <td class="tg-s6z2"><strong><?php echo $this->Html->link('Propostas Enviadas', ['controller' => 'proposals', 'action' => 'index'], ['class' => 'field']); ?></strong></td>
     <?php
         if (AuthComponent::user('role') == 'admin'){ ?>
-             <td class="tg-s6z2"><strong><?php echo $this->Html->link('Administração', ['controller' => 'products', 'action' => 'add'], ['class' => 'field']); ?></strong></td>
+             <td class="tg-s6z2"><strong><?php echo $this->Html->link('Administração', ['controller' => 'products', 'action' => 'index'], ['class' => 'field']); ?></strong></td>
     <?php  } ?>
    
   </tr>

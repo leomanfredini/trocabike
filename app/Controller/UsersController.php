@@ -7,6 +7,7 @@
 
 class UsersController extends AppController {
 	public $helpers = ['Html', 'Form', 'Flash'];
+	public $components = ['Recaptcha.Recaptcha'];
 
 
 	public function beforeFilter(){
@@ -46,7 +47,8 @@ class UsersController extends AppController {
 
 	public function logout(){
 		if ($this->Session->valid()) {
-		  $this->Session->destroy(); // Destrói		  
+			// Destrói	a sessão
+			$this->Session->destroy(); 	  
 		}
 		return $this->redirect($this->Auth->logout());
 	}
@@ -57,16 +59,21 @@ class UsersController extends AppController {
 	//Registrar Usuario
 	public function register() {
 		if ($this->request->is('post')) {
-			$this->User->create();
-			if ($this->User->save($this->request->data)) {
-				$this->Flash->success(__('Usuário cadastrado com sucesso.'));
-				return $this->redirect(array('controller' => 'products' , 'action' => 'index'));
+			//Valida a verificação reCaptcha
+			if ($this->Recaptcha->verify()) {
+				$this->User->create();
+				if ($this->User->save($this->request->data)) {
+					$this->Flash->success(__('Usuário cadastrado com sucesso.'));
+					return $this->redirect(array('controller' => 'products' , 'action' => 'index'));
+				} else {
+					$this->Flash->error('Erro nos dados informados. Verifique abaixo');
+				}
 			} else {
-				$this->Flash->error('Erro nos dados informados. Verifique abaixo');
+				//Erro retornado da API reCaptcha, caso falhe a validação
+				$this->Flash->error($this->Recaptcha->error);
 			}
 		}
-		// $categories = $this->Product->Category->find('list');
-		// $this->set(compact('categories'));
+		
 	}
 
 

@@ -41,7 +41,7 @@
 					}
 					?> 	
 			    </td>
-			    <td class="tg-baqh">Propostas</td>
+			    <td class="tg-baqh"><?php echo $this->Html->link('Visualizar', ['controller' => 'proposals' , 'action' => 'product_proposals', $product['Product']['id']]); ?></td>
 			    
 			    
 			  </tr>

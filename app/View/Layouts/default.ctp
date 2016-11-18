@@ -150,7 +150,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 </div>	
 <!-- End Shell -->
 	
-	<?php //echo $this->element('sql_dump'); ?>
+	<?php echo $this->element('sql_dump'); ?>
 
 </body>
 </html>

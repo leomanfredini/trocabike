@@ -16,7 +16,7 @@ class ProposalsController extends AppController {
 
 		//}
 
-		$this->paginate = ['limit' => 10,'conditions' => $conditions];
+		$this->paginate = ['limit' => 10, 'order' => ['Proposal.date' => 'desc'],'conditions' => $conditions];
 
 		$lista = $this->paginate();
 		$this->set('proposals', $lista);
@@ -48,14 +48,61 @@ class ProposalsController extends AppController {
 			$this->set('product', $this->Product->findById($id));
 		}		
 	}
-	
 
-	public function accept() {
+
+
+	public function product_proposals($id = null) {
+		$conditions = array();
+		$userId = $this->Auth->user('id');
+
+		$conditions['Proposal.user_id'] =  $userId;	
+		$conditions['Proposal.product_id'] =  $id;			
+
+		$this->paginate = ['limit' => 10, 'order' => ['Proposal.date' => 'desc'],'conditions' => $conditions];
+
+		$lista = $this->paginate();
+		if ($lista == null) {
+			$this->set('proposals', $lista);
+		} else {
+			return null;
+		} 
 
 	}
 
-	public function reject() {
+	
 
+	public function accept($id = null) {
+		$this->Proposal->id = $id;
+		//echo $this->Proposal->field('state');
+		if (!$this->Proposal->exists()) {
+			throw new NotFoundException($this->Flash->error('Proposta Inexistente!!!'));
+		} else if ($this->Proposal->field('user_id') != $this->Auth->user('id')) {
+			throw new Exception($this->Flash->error('Ação Não Permitida!!'));
+		} else if ($this->Proposal->field('state') != 1) {			
+			throw new Exception($this->Flash->error('Esta proposta já foi finalizada.'));
+		} else {
+			$this->Flash->success('Proposta aceita.');
+			$this->Proposal->saveField('state', 2);
+		}
+		$this->redirect($this->referer());
+	}
+
+
+
+	public function reject($id = null) {
+		$this->Proposal->id = $id;
+		//echo $this->Proposal->field('state');
+		if (!$this->Proposal->exists()) {
+			throw new NotFoundException($this->Flash->error('Proposta Inexistente!!!'));
+		} else if ($this->Proposal->field('user_id') != $this->Auth->user('id')) {
+			throw new Exception($this->Flash->error('Ação Não Permitida!!'));
+		} else if ($this->Proposal->field('state') != 1) {			
+			throw new Exception($this->Flash->error('Esta proposta já foi finalizada.'));
+		} else {
+			$this->Flash->success('Proposta ' . $id . ' rejeitada.');
+			$this->Proposal->saveField('state', 0);
+		}
+		$this->redirect($this->referer());
 	}
 
 }
