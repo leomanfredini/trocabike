@@ -116,3 +116,5 @@ setlocale(LC_ALL, 'pt_BR.utf-8', 'pt_BR', 'pt-br');
 
 Configure::write('Recaptcha.publicKey', '6LejCgwUAAAAAOdyc0aTE7DVEuIVAizACzmTUeUH');
 Configure::write('Recaptcha.privateKey', '6LejCgwUAAAAAFESiSBtqFe2ft57r51DamRGNtmU');
+
+CakePlugin::load('Correios',array('bootstrap'=>true));

@@ -14,10 +14,10 @@
 .tg  {border-collapse:collapse;border-spacing:0;border-width:0px;border-style:solid;margin:0px auto;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
-.tg .tg-s6z2{text-align:center}
+.tg .tg-s6z2{text-align:center;}
 .tg .tg-baqh{text-align:center;vertical-align:top}
 .tg .tg-yw4l{vertical-align:top}
-.tg .tg-uiv9{vertical-align:bottom}
+.tg .tg-uiv9{text-align:center;vertical-align:bottom;}
 </style>
 <table class="tg">
   <tr>
@@ -40,7 +40,7 @@
     <td class="tg-yw4l"></td>
   </tr>
   <tr>
-    <td class="tg-s6z2" rowspan="2"><a href="#" class="button-product-purchase">COMPRAR</a></td>
+    <td class="tg-s6z2" rowspan="2"><?php echo $this->Html->link('COMPRAR', ['controller' => 'products', 'action' => 'purchase', $product['Product']['id']], ['class' => 'button-product-purchase']); ?><?php echo $this->Html->link('ENVIAR PROPOSTA', ['controller' => 'proposals', 'action' => 'send', $product['Product']['id']], ['class' => 'button-product-proposal']); ?></td>
     <td class="tg-yw4l"></td>
     <td class="tg-031e"><strong>Estado de Uso: </strong>
         <?php 
@@ -56,7 +56,7 @@
     <td class="tg-031e"><strong>Peso: </strong><?php echo $product['Product']['weight']; ?> gramas</td>
   </tr>
   <tr>
-    <td class="tg-s6z2" rowspan="2"><?php echo $this->Html->link('ENVIAR PROPOSTA', ['controller' => 'proposals', 'action' => 'send', $product['Product']['id']], ['class' => 'button-product-proposal']); ?></td>
+    <td class="tg-s6z2" rowspan="2"><?php //echo $this->Html->link('ENVIAR PROPOSTA', ['controller' => 'proposals', 'action' => 'send', $product['Product']['id']], ['class' => 'button-product-proposal']); ?></td>
     <td class="tg-yw4l"></td>
     <td class="tg-yw4l"><strong>Altura: </strong><?php echo $product['Product']['width']; ?> cm</td>
   </tr>
@@ -64,6 +64,12 @@
     <td class="tg-yw4l"></td>
     <td class="tg-yw4l"><strong>Largura: </strong><?php echo $product['Product']['height']; ?> cm</td>
   </tr>
+  <tr>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"><strong>Comprimento: </strong><?php echo $product['Product']['length']; ?> cm</td>
+  </tr>
+  
 </table>
 
 
@@ -72,8 +78,5 @@
 
     </div>
   </fieldset>
-
-
-
 
 </div>

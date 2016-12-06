@@ -92,8 +92,9 @@ a.bul { background:url(images/bul.gif) no-repeat 0 center; padding-left:10px;}
 .forms-contentactions { padding:50px;}
 
 
-.button-product-purchase { width:143px; background:#4ca30e; border:0; color:#fff; height:27px; display:block; line-height:26px; cursor:pointer; margin:12px 0 10px 0; text-align: center; text-decoration: none; font-weight: bold;}
-.button-product-proposal { width:143px; background:#080d93; border:0; color:#fff; height:27px; display:block; line-height:26px; cursor:pointer; margin:12px 0 10px 0; text-align: center; text-decoration: none; font-weight: bold;}
+/*.button-product-purchase { width:160px; background:#4ca30e; border:0; color:#fff; height:27px; display:block; line-height:26px; cursor:pointer; margin:12px 0 10px 0; text-align: center; text-decoration: none; font-weight: bold;}*/
+.button-product-purchase { width:160px; background:#4ca30e; border:0; color:#fff; height:27px; display:block; line-height:26px; cursor:pointer; margin-left: auto; margin-right: auto; text-align: center; text-decoration: none; font-weight: bold;}
+.button-product-proposal { width:160px; background:#080d93; border:0; color:#fff; height:27px; display:block; line-height:26px; cursor:pointer; margin-left: auto; margin-right: auto; text-align: center; text-decoration: none; font-weight: bold;}
 
 .categories { min-height:83px; }
 .categories ul { list-style-type: none; font-size:13px;}

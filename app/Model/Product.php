@@ -17,6 +17,11 @@ public $name = 'Product';
 	public $validate = [
 		'title' => 'notBlank',
         'long_description' => 'notBlank',
+        'height' => [
+        	'rule' => 'numeric',
+        	'message' => 'Somente Números'
+        ],
+        
 		'filename' => [
 			// http://book.cakephp.org/2.0/en/models/data-validation.html#Validation::uploadError
 			'uploadError' => [

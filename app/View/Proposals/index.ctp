@@ -26,6 +26,7 @@
 			    <th class="tg-s6z2"><strong><?php echo $this->Paginator->sort('date', 'Data');?></strong></th>
 			    <th class="tg-baqh"><strong><?php echo $this->Paginator->sort('user_id', 'Vendedor');?></strong></th>
 			    <th class="tg-baqi"><strong><?php echo $this->Paginator->sort('state', 'Status');?></strong></th>
+			    <th class="tg-baqi"><strong>Ação</strong></th>
 			  </tr>
 			  <?php foreach ($proposals as $proposal): ?>
 			  <tr>
@@ -41,6 +42,13 @@
 						echo '<font color="red">Rejeitada</font>';
 					} else {
 						echo '<font color="green">Aceita</font>';
+					}
+					?> 	
+			    </td>
+			    <td class="tg-baqh">
+			    	<?php 
+					if ($proposal['Proposal']['state'] == 2){
+						echo $this->Html->link('Comprar', ['action' => 'purchase', $proposal['Proposal']['id']]);
 					}
 					?> 	
 			    </td>
@@ -60,39 +68,3 @@
 	</fieldset>
 
 </div>
-
-
-
-
-
-
-<!-- 	<h3>Propostas Enviadas</h3>
-
-	<table cellpadding="0" cellspacing="0">
-		<tr>			
-			<th><?php echo $this->Paginator->sort('title', 'Produto');?></th>
-			<th><?php echo $this->Paginator->sort('price', 'Valor');?></th>
-			<th><?php echo $this->Paginator->sort('date', 'Data');?></th>
-			<th><?php echo $this->Paginator->sort('user', 'Vendedor');?></th>
-			<th>Status</th>
-		</tr>
-
-		<?php foreach ($proposals as $proposal): ?>
-		<tr>			
-			<td><?php echo $proposal['Product']['title'] ?></td>
-			<td><?php echo $this->Number->currency($proposal['Proposal']['price'], 'EUR')?></td>			
-			<td><?php echo $this->Time->format($proposal['Proposal']['date'], '%d/%m/%Y %H:%M')?></td>
-			<td><?php echo $proposal['User']['name'] ?></td>
-			<td class="actions">
-				<?php 
-					if ($proposal['Proposal']['state'] == 1){
-						echo 'Pendente';
-					} else if ($proposal['Proposal']['state'] == 2){
-						echo 'Rejeitada';
-					}
-					?> 				
-			</td>
-		</tr>
-		<?php endforeach; ?>
-	</table> -->
-

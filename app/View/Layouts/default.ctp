@@ -149,7 +149,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	
 </div>	
 <!-- End Shell -->
-	
+	<?php echo $this->fetch('scriptBottom'); ?>
 	<?php echo $this->element('sql_dump'); ?>
 
 </body>

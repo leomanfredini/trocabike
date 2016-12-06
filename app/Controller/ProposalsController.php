@@ -39,7 +39,7 @@ class ProposalsController extends AppController {
 
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Proposal->saveAll($this->request->data)) {
-				$this->Flash->success('Proposta enviada.');
+				$this->Flash->success('Proposta enviada com sucesso.');
 				$this->redirect(['action' => 'index']);
 			} else {
 				$this->Flash->error('ERRO!! A proposta não pôde ser enviada!!!');
@@ -61,12 +61,7 @@ class ProposalsController extends AppController {
 		$this->paginate = ['limit' => 10, 'order' => ['Proposal.date' => 'desc'],'conditions' => $conditions];
 
 		$lista = $this->paginate();
-		if ($lista == null) {
-			$this->set('proposals', $lista);
-		} else {
-			return null;
-		} 
-
+		$this->set('proposals', $lista);
 	}
 
 	
@@ -103,6 +98,41 @@ class ProposalsController extends AppController {
 			$this->Proposal->saveField('state', 0);
 		}
 		$this->redirect($this->referer());
+	}
+
+
+
+	public function purchase($id = null){
+		$this->Session->delete('proposal_id');
+		$this->Session->delete('product_id');
+		$this->Session->delete('price');
+		$this->Session->delete('buyer');
+		$this->Session->delete('frete');
+		$this->LoadModel('Product');
+		$this->Proposal->id = $id;
+		$this->Product->id = $this->Proposal->field('product_id');
+
+		if (!$this->Proposal->exists()) {
+			throw new NotFoundException($this->Flash->error('Proposta Inexistente!!!'));
+		}
+		if ($this->Proposal->field('state') != 2) {
+			throw new NotFoundException($this->Flash->error('Operação não permitida para esta proposta.'));
+		}
+		if ($this->Proposal->field('buyer_id') != $this->Auth->user('id')) {
+			throw new Exception($this->Flash->error('Esta proposta não pertence ao seu usuário.'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			$this->Session->write('product_id', $this->Proposal->field('product_id'));
+	    	$this->Session->write('buyer', $this->Auth->user('id'));
+	    	$this->Session->write('price', $this->Proposal->field('price'));
+	    	$this->Session->write('proposal_id', $this->Proposal->field('id'));
+	    	$this->Session->write('frete', 0);
+	    	$this->redirect(['controller'=>'transactions','action' => 'checkout']);
+		} else {
+			$this->set('product', $this->Product->findById($this->Proposal->field('product_id')));
+			$this->set('proposal', $this->Proposal->findById($id));
+		}
+
 	}
 
 }

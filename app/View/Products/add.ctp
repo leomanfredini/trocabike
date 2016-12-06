@@ -58,6 +58,13 @@
 		'type' => 'number'
 	]);
 
+	echo $this->Form->input('length', [
+		'label' => 'Comprimento', 
+		'placeholder' => 'Comprimento em Centímetros', 
+		'class' => 'small-field',
+		'type' => 'number'
+	]);
+
 	echo $this->Form->input('height', [
 		'label' => 'Altura', 
 		'placeholder' => 'Altura em Centímetros', 

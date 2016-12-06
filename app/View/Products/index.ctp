@@ -12,7 +12,8 @@
 	    			<p><?php echo $this->Html->link($product['Product']['title'], ['controller' => 'products' , 'action' => 'view', $product['Product']['id']]); ?></p>
 	    			<strong class="price"><?php echo $this->Number->currency($product['Product']['price'], 'EUR') ?></strong>
 	    			<!-- <p><?php echo $this->Locale->date($product['Product']['modified']) ?></p> -->
-	    			<a href="#" class="button-product-purchase">COMPRAR</a>
+	    			<!-- <a href="#" class="button-product-purchase">COMPRAR</a> -->
+	    			<?php echo $this->Html->link('COMPRAR', ['controller' => 'products', 'action' => 'purchase', $product['Product']['id']], ['class' => 'button-product-purchase']); ?>
 	    			<!-- <a href="#" class="button-product-proposal">ENVIAR PROPOSTA</a> -->
 	    			<?php echo $this->Html->link('ENVIAR PROPOSTA', ['controller' => 'proposals', 'action' => 'send', $product['Product']['id']], ['class' => 'button-product-proposal']); ?>
 	    		</div>

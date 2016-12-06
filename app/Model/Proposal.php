@@ -2,7 +2,7 @@
 
 class Proposal extends AppModel {
 
-		public $belongsTo = [
+    public $belongsTo = [
         'User' => [
             'className' => 'User',
             'foreignKey' => 'user_id'            

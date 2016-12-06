@@ -25,7 +25,7 @@
 			    <th class="tg-s6z2"><strong><?php echo $this->Paginator->sort('title', 'Produto');?></strong></th>
 			    <th class="tg-s6z2"><strong><?php echo $this->Paginator->sort('price', 'Valor');?></strong></th>
 			    <th class="tg-baqh"><strong><?php echo $this->Paginator->sort('active', 'Status');?></strong></th>
-			    <th class="tg-baqi"><strong>Propostas</strong></th>
+			    <th class="tg-baqi"><strong>Ação</strong></th>
 			  </tr>
 			  <?php foreach ($products as $product): ?>
 			  <tr>
@@ -37,11 +37,11 @@
 					if ($product['Product']['active'] == 1){
 						echo '<font color="green">Ativo</font>';
 					} else {
-						echo '<font color="red">Ativo</font>';					
+						echo '<font color="red">Inativo</font>';					
 					}
 					?> 	
 			    </td>
-			    <td class="tg-baqh"><?php echo $this->Html->link('Visualizar', ['controller' => 'proposals' , 'action' => 'product_proposals', $product['Product']['id']]); ?></td>
+			    <td class="tg-baqh"><?php echo $this->Html->link('Visualizar Proposta', ['controller' => 'proposals' , 'action' => 'product_proposals', $product['Product']['id']]); ?></td>
 			    
 			    
 			  </tr>

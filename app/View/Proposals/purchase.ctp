@@ -5,9 +5,14 @@
 <?php echo $this->Form->create('Proposal'); ?>
 
  <fieldset>
-<h2>Enviar Proposta de Compra<span></span></h2>
+<h2><span></span></h2>
 <div class="forms-content">
 
+<!--     <strong>Dados do Produto</strong>
+    <br><br>
+    <?php echo $product['Product']['title']; ?>
+    <?php echo $product['Product']['price']; ?>
+ -->
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-width:0px;border-style:solid;margin:0px auto;}
@@ -20,35 +25,33 @@
 </style>
 <table class="tg">
   <tr>
-    <th class="tg-baqh" colspan="3"><h1><?php echo $product['Product']['title']; ?></h1></th>
+    <th class="tg-baqh" colspan="3"><h1>Parabéns. Sua proposta foi aceita.</h1></th>
   </tr>
   <tr>
-    <td class="tg-s6z2" rowspan="3"><?php echo $this->Html->image(basename($product['Product']['filename']), ['width' => '227px','alt'=>'Produto']); ?></td>
-    <td class="tg-yw4l">&nbsp;&nbsp;</td>
-    <td class="tg-uiv9"></td>
+    <td class="tg-s6z2"><?php echo $this->Html->image(basename($product['Product']['filename']), ['width' => '227px','alt'=>'Produto']); ?></td>   
   </tr>
   <tr>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l" rowspan="3"><strong>Valor da Proposta</strong><br><br><?php echo $this->Form->input('price', array(   
-      'label' => false,  
-      'class' => 'small-field',
-      'type' => 'number'
-    )); ?></td>
+    <td class="tg-yw4l"><strong class="price"><?php echo $product['Product']['title']; ?></strong></td>    
   </tr>
   <tr>
     <td class="tg-yw4l"></td>
   </tr>
   <tr>
-    <td class="tg-s6z2"><strong class="price"><?php echo $this->Number->currency($product['Product']['price'], 'EUR') ?></strong></td>
-    <td class="tg-yw4l"></td>
+    <td class="tg-s6z2">Valor aceito para compra</td>    
   </tr>
   <tr>
-    <td class="tg-s6z2"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-s6z2"> <?php echo $this->Form->submit('  Submeter Proposta  ', array(
-      'div' => 'form-group',
-      'class' => 'btn btn-primary'
-    )); ?></td>
+    <td class="tg-s6z2"><strong class="price"><?php echo $this->Number->currency($proposal['Proposal']['price'], 'EUR') ?></strong></td>    
+  </tr>
+  <tr>
+    <td class="tg-s6z2">
+      <?php 
+        echo $this->Form->submit('  Prosseguir para a Compra ', [
+          'div' => 'form-group',
+          'class' => 'btn btn-primary']
+        ); 
+      ?>     
+    </td>
+    
   </tr>
 </table>
 
@@ -75,6 +78,14 @@
       'value' => 1
     ]); ?>
 
+
+<!--     <?php echo $this->Form->input('price', array(
+      'label' => 'Valor do Lance',
+      'class' => 'small-field',
+      'type' => 'number'
+    )); ?> -->
+
+    
 
     <br>
     <br>

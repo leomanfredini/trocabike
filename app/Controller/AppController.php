@@ -33,6 +33,7 @@ App::uses('Controller', 'Controller', 'Sessions');
 class AppController extends Controller {
 
 	public $helpers = ['Locale.Locale'];
+	public $uses = ['Correios.Frete'];
 	
 	public $components = [
 		'Flash',
