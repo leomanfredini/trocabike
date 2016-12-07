@@ -91,43 +91,12 @@ class ProductsController extends AppController {
 
 
 
-	// public function frete() {
-	// 	if ($this->request->is('post')) {
-	// 		$this->Frete->set($this->request->data);
-	// 		$cep = $this->request->data['Frete']['cep'];
-	// 		$dados = ['conditions' => [
-	// 			'altura' => 2, 
-	// 			'comprimento' => 16, 
-	// 			'largura' => 11, 
-	// 			'peso' => 30, 
-	// 			'servicos' => ['PAC','SEDEX'], 
-	// 			'ceporigem' => '95708-430', 
-	// 			'cep' => $cep
-	// 		]];
-	// 		$return = $this->Frete->find('all', $dados);
-
-	// 		// $return = $this->Frete->find('all',array('conditions'=>array(
-	// 	 //        'altura'=>'10',
-	// 	 //        'comprimento'=>30,
-	// 	 //        'largura'=>30,
-	// 	 //        'peso'=>9,
-	// 	 //        'servicos'=>['PAC','SEDEX'],
-	// 	 //        'ceporigem'=>95703072,
-	// 	 //        'cep'=>27511300
-	//  //       )));
-	//         $this->set('frete', $return);
-	//     }
-	//     $this->set(compact('frete'));
-	//     //$this->render('ajax_response', 'ajax');
- //    }
-
-
-
     public function purchase($id = null, $price = null){
     	$this->render(false);
     	$this->Session->delete('proposal_id');
     	$this->Session->delete('buyer');
     	$this->Session->delete('price');
+    	$this->Session->delete('ceporigem');
     	$this->Product->id = $id;
     	if ($this->Product->exists()) {
 	    	$this->Session->write('product_id', $id);

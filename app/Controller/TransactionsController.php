@@ -18,9 +18,11 @@ class TransactionsController extends AppController {
 	}
 
 
+
 	public function index() {
 		
 	}
+
 
 
 	public function checkout() {
@@ -38,7 +40,11 @@ class TransactionsController extends AppController {
 			$this->set('product', $this->Product->findById($this->Product->field('id')));
 		}
 
+		//CALCULO DO FRETE VIA WS CORREIOS
 		if ($this->request->is('post')) {
+			$this->User->id = $this->Product->field('user_id');
+			$ceporigem = $this->User->field('cep');
+			$this->Session->write('ceporigem', $ceporigem);
 			$this->Frete->set($this->request->data);
 			$cep = $this->request->data['Checkout']['cep'];
 			$dados = ['conditions' => [
@@ -47,7 +53,7 @@ class TransactionsController extends AppController {
 				'largura' => $this->Product->field('width'), 
 				'peso' => ($this->Product->field('weight') / 1000), 
 				'servicos' => ['PAC'], 
-				'ceporigem' => '74474100', 
+				'ceporigem' => $ceporigem, 
 				'cep' => $cep
 			]];
 			$return = $this->Frete->find('all', $dados);
@@ -57,10 +63,9 @@ class TransactionsController extends AppController {
 	        } else {
 	        	$this->Flash->error($return['0']['Frete']['MsgErro']);
 	        }
-	    }
-		
-		
+	    }		
 	}
+
 
 
 	public function checkout_final() {
@@ -130,7 +135,6 @@ class TransactionsController extends AppController {
 	        $this->set('frete', $return);
 	    }
 	    $this->set(compact('frete'));
-	    //$this->render('ajax_response', 'ajax');
     }
 
 }

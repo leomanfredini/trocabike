@@ -108,6 +108,7 @@ class ProposalsController extends AppController {
 		$this->Session->delete('price');
 		$this->Session->delete('buyer');
 		$this->Session->delete('frete');
+		$this->Session->delete('ceporigem');
 		$this->LoadModel('Product');
 		$this->Proposal->id = $id;
 		$this->Product->id = $this->Proposal->field('product_id');
