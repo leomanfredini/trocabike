@@ -132,6 +132,7 @@ class TransactionsController extends AppController {
 
 
 
+
 	public function frete($cep) {
 		if ($this->request->is('post')) {
 			$this->Frete->set($this->request->data);
