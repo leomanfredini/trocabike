@@ -71,6 +71,7 @@ class TransactionsController extends AppController {
 	public function checkout_final() {
 		$this->LoadModel('Product');
 		$this->LoadModel('Proposal');
+		$this->LoadModel('User');
 		
 		if ($this->Session->read('proposal_id') != null){
 			$this->Product->id = $this->Session->read('product_id');
@@ -83,6 +84,24 @@ class TransactionsController extends AppController {
 		}
 
 		if ($this->request->is('post')) {
+			$data = array(
+				'price' => $this->Session->read('price'),
+				'frete' => $this->Session->read('frete'), 
+				'product_id' => $this->Session->read('product_id'), 
+				'user_id' => $this->Session->read('user_id'), 
+				'buyer_id' => $this->Session->read('buyer'),
+				'final_price' => $this->Session->read('price') + $this->Session->read('frete')
+			);
+
+
+			$this->Transaction->create();
+			$this->Transaction->save($data);
+			
+
+
+			//$this->Transaction->saveField('price', '1');
+
+
 			// $this->Frete->set($this->request->data);
 			// $cep = $this->request->data['Checkout']['cep'];
 			// $dados = ['conditions' => [

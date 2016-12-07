@@ -123,6 +123,7 @@ class ProposalsController extends AppController {
 			throw new Exception($this->Flash->error('Esta proposta não pertence ao seu usuário.'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+			//$this->Session->write('user_id', $this->Product->field('user_id'));
 			$this->Session->write('product_id', $this->Proposal->field('product_id'));
 	    	$this->Session->write('buyer', $this->Auth->user('id'));
 	    	$this->Session->write('price', $this->Proposal->field('price'));

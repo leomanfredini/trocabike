@@ -101,6 +101,7 @@ class ProductsController extends AppController {
     	if ($this->Product->exists()) {
 	    	$this->Session->write('product_id', $id);
 	    	$this->Session->write('buyer', $this->Auth->user('id'));
+	    	$this->Session->write('user_id', $this->Product->field('user_id'));
 	    	if ($price == null){
 	    		$this->Session->write('price', $this->Product->field('price'));
 	    	}	    	
