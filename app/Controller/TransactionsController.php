@@ -6,6 +6,7 @@ App::uses('AppController', 'Controller');
 
 class TransactionsController extends AppController {
 	public $uses = array('Correios.Frete');
+	var $components = array('Boletos.BoletoBb');
 
 	public function beforeFilter(){
 		parent::beforeFilter();
@@ -92,39 +93,43 @@ class TransactionsController extends AppController {
 				'buyer_id' => $this->Session->read('buyer'),
 				'final_price' => $this->Session->read('price') + $this->Session->read('frete')
 			);
-
-
 			$this->Transaction->create();
 			$this->Transaction->save($data);
-			
-
-
-			//$this->Transaction->saveField('price', '1');
-
-
-			// $this->Frete->set($this->request->data);
-			// $cep = $this->request->data['Checkout']['cep'];
-			// $dados = ['conditions' => [
-			// 	'altura' => 2, 
-			// 	'comprimento' => 17, 
-			// 	'largura' => 11, 
-			// 	'peso' => 2, 
-			// 	'servicos' => ['PAC'], 
-			// 	'ceporigem' => '74474-100', 
-			// 	'cep' => $cep
-			// ]];
-			// $return = $this->Frete->find('all', $dados);
-	  //       if ($return['0']['Frete']['Erro'] == 0){
-	  //       	debug($return);
-	  //       	$this->Session->write('frete', $return['0']['Frete']['ValorSemAdicionais']);
-
-	  //       } else {
-	  //       	$this->Flash->error($return['0']['Frete']['MsgErro']);
-	  //       }
 	    }
 		
 		
 	}
+
+
+	public function boleto(){
+		$this->autoRender = false;
+		$dados = array(
+			'sacado' => 'Fulano de Tal',
+			'endereco1' => 'Rua do funal de tal, 88',
+			'endereco2' => 'Curitiba/PR',
+			'valor_cobrado' => 100.56,
+			'pedido' => 5 // Usado para gerar o número do documento e o nosso número.
+		);
+		$this->BoletoBb->render($dados);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	public function frete($cep) {
