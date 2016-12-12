@@ -16,32 +16,38 @@
 <div class="forms">
 
 	<fieldset>
-		<h2>Meus Produtos<span></span></h2>
+		<h2>Meus Pedidos<span></span></h2>
 		<div class="forms-content">
 
 			<table class="tg">
 			  <tr>
-			    <th class="tg-s6z2"></th>
+			    <th class="tg-s6z2"><strong><?php echo $this->Paginator->sort('id', 'Pedido');?></strong></th>
 			    <th class="tg-s6z2"><strong><?php echo $this->Paginator->sort('title', 'Produto');?></strong></th>
 			    <th class="tg-s6z2"><strong><?php echo $this->Paginator->sort('price', 'Valor');?></strong></th>
 			    <th class="tg-baqh"><strong><?php echo $this->Paginator->sort('active', 'Status');?></strong></th>
 			    <th class="tg-baqi"><strong>Ação</strong></th>
 			  </tr>
-			  <?php foreach ($products as $product): ?>
+			  <?php foreach ($transactions as $transaction): ?>
 			  <tr>
-			  	<td class="tg-lqy6"><?php echo $this->Html->image(basename($product['Product']['filename']), ['width' => '127px','alt'=>'Produto', 'url' => array('controller' => 'products', 'action' => 'view', $product['Product']['id'])]); ?></td>
-			    <td class="tg-yw4l"><?php echo $product['Product']['title'] ?></td>
-			    <td class="tg-lqy6"><?php echo $this->Number->currency($product['Product']['price'], 'EUR')?></td>
+			  	<td class="tg-lqy6"><?php echo $transaction['Transaction']['id'] ?></td>
+			    <td class="tg-yw4l"><?php echo $transaction['Product']['title'] ?></td>
+			    <td class="tg-lqy6"><?php echo $this->Number->currency($transaction['Transaction']['final_price'], 'EUR')?></td>
 			    <td class="tg-baqh">
 			    	<?php 
-					if ($product['Product']['active'] == 1){
-						echo '<font color="green">Ativo</font>';
+					if ($transaction['Transaction']['state'] == 0){
+						echo '<font color="red">Pagamento Pendente</font>';
 					} else {
-						echo '<font color="red">Inativo</font>';					
+						echo '<font color="green">Pagamento Confirmado</font>';					
 					}
 					?> 	
 			    </td>
-			    <td class="tg-baqh"><?php echo $this->Html->link('Visualizar Proposta', ['controller' => 'proposals' , 'action' => 'product_proposals', $product['Product']['id']]); ?></td>
+			    <td class="tg-baqh">
+			    	<?php 
+					if ($transaction['Transaction']['state'] == 0){
+						echo $this->Html->link('Imprimir Boleto', "javascript:void(0)", array("onclick"=>"window.open('".$this->Html->url(array('controller' => 'transactions', 'action' => 'print_boleto', $transaction['Boleto']['id']))."','photo','height=750,width=800')")); 
+					} 
+					?>
+			    </td>
 			    
 			    
 			  </tr>

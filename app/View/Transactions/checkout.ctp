@@ -65,12 +65,5 @@
       </table>
     <?php //echo $this->Form->end(); ?>
     </div>
-    <?php //echo 'Produto escolhido: ' . $this->Session->read('product_id');?>
-    <br>
-    <?php //echo 'Comprador: ' . $this->Session->read('buyer');?>
-    <br>
-    <?php //echo 'Valor: R$ ' . $this->Session->read('price');?>
-    <br>
-    <?php //echo 'Proposta: ' . $this->Session->read('proposal_id');?>
   </fieldset>
 </div>

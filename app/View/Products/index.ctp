@@ -24,6 +24,13 @@
 	<div class="cl">&nbsp;</div>
 </div>
 <!-- End Products -->
+<div class='paging' align="center">
+	<?php echo $this->Paginator->prev('« Anterior', null, null, ['class' => 'desabilitado']);?>
+	&nbsp;&nbsp;&nbsp;
+	<?php echo $this->Paginator->numbers(); ?>
+	&nbsp;&nbsp;&nbsp;
+	<?php echo $this->Paginator->next(' Próxima »', null, null, ['class' => 'desabilitado']);?>
+</div>
 
 
 <!-- <?php echo $this->Html->link($product['Product']['title'], ['controller' => 'products' , 'action' => 'view', $product['Product']['id']]); ?> -->

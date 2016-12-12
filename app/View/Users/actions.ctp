@@ -15,25 +15,36 @@
   <tr>
     <th class="tg-s6z2"><?php echo $this->html->image('man-riding-a-motorbike.png') ?></th>
     <th class="tg-s6z2"><?php echo $this->html->image('paper-bag.png') ?></th>
+    <th class="tg-s6z2"><?php echo $this->html->image('pedido.png') ?></th>
     <th class="tg-s6z2"><?php echo $this->html->image('addition-sign.png') ?></th>
     <th class="tg-s6z2"><?php echo $this->html->image('proposals.png') ?></th>
-    <?php
+<!--     <?php
         if (AuthComponent::user('role') == 'admin'){ ?>
-            <th class="tg-s6z2"><?php echo $this->html->image('root.png') ?></th>    
-    <?php  } ?>
+            <th class="tg-s6z2"><?php //echo $this->html->image('root.png') ?></th>    
+    <?php  } ?> -->
     
   </tr>
   <tr>
     <td class="tg-s6z2"><strong><?php echo $this->Html->link('Meus Dados', ['controller' => 'users', 'action' => 'view', AuthComponent::user('id')], ['class' => 'field']); ?></strong></td>
     <td class="tg-s6z2"><strong><?php echo $this->Html->link('Meus Produtos', ['controller' => 'products', 'action' => 'myproducts'], ['class' => 'field']); ?></strong></td>
+    <td class="tg-s6z2"><strong><?php echo $this->Html->link('Minhas Compras', ['controller' => 'transactions', 'action' => 'mytransactions'], ['class' => 'field']); ?></strong></td>
     <td class="tg-s6z2"><strong><?php echo $this->Html->link('Adicionar Produto', ['controller' => 'products', 'action' => 'add'], ['class' => 'field']); ?></strong></td>
     <td class="tg-s6z2"><strong><?php echo $this->Html->link('Propostas Enviadas', ['controller' => 'proposals', 'action' => 'index'], ['class' => 'field']); ?></strong></td>
-    <?php
+<!--     <?php
         if (AuthComponent::user('role') == 'admin'){ ?>
              <td class="tg-s6z2"><strong><?php echo $this->Html->link('Administração', ['controller' => 'products', 'action' => 'index'], ['class' => 'field']); ?></strong></td>
-    <?php  } ?>
+    <?php  } ?> -->
    
   </tr>
+  <?php
+        if (AuthComponent::user('role') == 'admin'){ ?>
+  <tr>
+    <td class="tg-s6z2">
+      <?php echo $this->html->image('root.png') ?>
+      <br>
+      <strong><?php echo $this->Html->link('Gestão de Pagamentos', ['controller' => 'transactions', 'action' => 'index'], ['class' => 'field']); ?></strong></td>
+  </tr>
+  <?php  } ?>
 </table>
 
     </div>

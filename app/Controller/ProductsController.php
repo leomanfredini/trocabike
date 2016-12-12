@@ -24,7 +24,7 @@ class ProductsController extends AppController {
 
 		$conditions = array('Product.active' => true);
 
-		$this->paginate = ['conditions' => $conditions];
+		$this->paginate = ['limit' => 9, 'conditions' => $conditions];
 
 		$lista = $this->paginate();
 		$this->set('products', $lista);	
@@ -98,6 +98,10 @@ class ProductsController extends AppController {
     	$this->Session->delete('price');
     	$this->Session->delete('ceporigem');
     	$this->Product->id = $id;
+    	if ($this->Product->field('user_id') == $this->Auth->user('id')) {
+			$this->Flash->error('Ação Inválida. Você não pode comprar seus próprios produtos!!');
+			$this->redirect($this->referer());
+		}
     	if ($this->Product->exists()) {
 	    	$this->Session->write('product_id', $id);
 	    	$this->Session->write('buyer', $this->Auth->user('id'));

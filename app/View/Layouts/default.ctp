@@ -59,7 +59,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<div id="sidebar">
 			
 			<!-- Search -->
-			<div class="box search">
+<!-- 			<div class="box search">
 				<h2>Busca <span></span></h2>
 				<div class="box-content">
 					<form action="" method="post">
@@ -76,7 +76,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	
 					</form>
 				</div>
-			</div>
+			</div> -->
 			<!-- End Search -->
 			
 			<!-- Categories -->
@@ -104,12 +104,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<div class="cols">
 			<div class="cl">&nbsp;</div>
 			<div class="col">
-				<h3 class="ico ico1">Donec imperdiet</h3>
+				<h3 class="ico ico1">Entrega Garantida</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
 				<p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
 			</div>
 			<div class="col">
-				<h3 class="ico ico2">Donec imperdiet</h3>
+				<h3 class="ico ico2">Suporte Imediato</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
 				<p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
 			</div>
@@ -119,7 +119,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				<p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
 			</div>
 			<div class="col col-last">
-				<h3 class="ico ico4">Donec imperdiet</h3>
+				<h3 class="ico ico4">Compre com Segurança</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
 				<p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
 			</div>

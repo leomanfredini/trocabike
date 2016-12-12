@@ -11,12 +11,9 @@ class ProposalsController extends AppController {
 		$conditions = array();
 		$userId = $this->Auth->user('id');
 
-		//if ($this->Auth->user('role') != 'admin'){
-			$conditions['Proposal.buyer_id'] =  $userId;			
+		$conditions['Proposal.buyer_id'] =  $userId;			
 
-		//}
-
-		$this->paginate = ['limit' => 10, 'order' => ['Proposal.date' => 'desc'],'conditions' => $conditions];
+		$this->paginate = ['limit' => 20, 'order' => ['Proposal.date' => 'desc'],'conditions' => $conditions];
 
 		$lista = $this->paginate();
 		$this->set('proposals', $lista);
@@ -28,13 +25,16 @@ class ProposalsController extends AppController {
 		$this->LoadModel('Product');
 		$this->Product->id = $id;
 		if (!$this->Product->exists()) {
-			throw new NotFoundException($this->Flash->error('PRODUTO INEXISTENTE'));
+			$this->Flash->error('PRODUTO INEXISTENTE');
+			$this->redirect($this->referer());
 		} 
 		if ($this->Product->field('user_id') == $this->Auth->user('id')) {
-			throw new Exception($this->Flash->error('Ação Inválida. Você não pode enviar propostas aos seus próprios produtos!!'));
+			$this->Flash->error('Ação Inválida. Você não pode enviar propostas aos seus próprios produtos!!');
+			$this->redirect($this->referer());
 		}
 		if ($this->Product->field('active') == 0) {
-			throw new Exception('Este produto não pode receber propostas!!');
+			$this->Flash->error('Este produto não pode receber propostas!!');
+			$this->redirect($this->referer());
 		}
 
 		if ($this->request->is('post') || $this->request->is('put')) {

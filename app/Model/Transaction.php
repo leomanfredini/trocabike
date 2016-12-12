@@ -18,4 +18,6 @@ class Transaction extends AppModel {
         
     ];
 
+    public $hasOne = 'Boleto' ;
+
 }

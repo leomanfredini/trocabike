@@ -6,7 +6,7 @@
 .tg .tg-s6z2{text-align:center}
 .tg .tg-baqh{text-align:center;vertical-align:top}
 .tg .tg-baqi{text-align:center;vertical-align:top;color:#8b0000;}
-.tg .tg-lqy6{text-align:right;vertical-align:top}
+.tg .tg-lqy6{text-align:right;vertical-align:top} 
 .tg .tg-yw4l{vertical-align:top}
 </style>
 
