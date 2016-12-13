@@ -40,8 +40,10 @@
 						echo '<font color=#996600>Pendente</font>';
 					} else if ($proposal['Proposal']['state'] == 0){
 						echo '<font color="red">Rejeitada</font>';
-					} else {
+					} else if ($proposal['Proposal']['state'] == 2){
 						echo '<font color="green">Aceita</font>';
+					} else {
+						echo '<font color="grey">Finalizada</font>';
 					}
 					?> 	
 			    </td>

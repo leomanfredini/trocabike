@@ -104,24 +104,24 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<div class="cols">
 			<div class="cl">&nbsp;</div>
 			<div class="col">
-				<h3 class="ico ico1">Entrega Garantida</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-				<p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
+				<h3 class="ico ico1">Compre com Segurança</h3>
+				<p>Compre seus produtos com a garantia de recebimento ou o seu dinheiro de volta.</p>
+				<p class="more"></p>
 			</div>
 			<div class="col">
-				<h3 class="ico ico2">Suporte Imediato</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-				<p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
+				<h3 class="ico ico2">Venda com Segurança</h3>
+				<p>Anuncie seus produtos em nossa plataforma especializada, garantindo sua excelente visibilidade.</p>
+				<p class="more"></p>
 			</div>
 			<div class="col">
-				<h3 class="ico ico3">Donec imperdiet</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-				<p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
+				<h3 class="ico ico3">Suporte Imediato</h3>
+				<p>Em caso de dúvidas, garantimos auxílio especializado.</p>
+				<p class="more"></p>
 			</div>
 			<div class="col col-last">
-				<h3 class="ico ico4">Compre com Segurança</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-				<p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
+				<h3 class="ico ico4">Sempre Disponível</h3>
+				<p>Aberto 24 horas por dia, 7 dias por semana.</p>
+				<p class="more"></p>
 			</div>
 			<div class="cl">&nbsp;</div>
 		</div>
@@ -132,7 +132,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	
 	<!-- Footer -->
 	<div id="footer">
-		<p class="left">
+		<!-- <p class="left">
 			<a href="#">Home</a>
 			<span>|</span>
 			<a href="#">Suporte</a>
@@ -140,7 +140,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			<a href="#">Sobre Nós</a>
 			<span>|</span>
 			<a href="#">Contato</a>
-		</p>
+		</p> -->
 		<p class="right">
 			&copy; 2016 - <a href="http://www.google.com.br/">EL Sistemas</a>
 		</p>

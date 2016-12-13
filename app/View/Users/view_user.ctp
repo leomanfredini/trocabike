@@ -5,7 +5,7 @@
 <?php echo $this->Form->create('User'); ?>
 
  <fieldset>
-<h2>Meus Dados<span></span></h2>
+<h2>Dados do Usuário<span></span></h2>
 <div class="forms-content">
 
     <strong>Nome: </strong>    
@@ -23,29 +23,8 @@
     <br>
     <br>
 
-    <strong>Genero: </strong>
-    <?php  
-      if ($user['User']['genre'] == '1'){
-        echo "Masculino";
-      } else {
-        echo "Feminino";
-      }
-    ?>
-    <br>
-    <br>
-
     <strong>Telefone: </strong>
     <?php  echo $user['User']['phone']; ?>
-    <br>
-    <br>
-
-    <strong>Nome de usuário: </strong>
-    <?php  echo $user['User']['username']; ?>
-    <br>
-    <br>
-
-    <strong>Senha: </strong>
-    <?php  echo "******"; ?>
     <br>
     <br>
     <br>
@@ -54,6 +33,7 @@
     <strong>Endereço de Entrega</strong>
     <br><br>
 
+    
     <strong>Endereço: </strong>
     <?php  echo $user['User']['address']; ?>
     <br>
@@ -86,6 +66,7 @@
 
     <strong>CEP: </strong>
     <?php  echo $user['User']['cep']; ?>
+    <?php  echo $user['User']['cep']; ?>
     <br>
     <br>
     <br>
@@ -108,10 +89,6 @@
     <?php  echo $user['User']['account']; ?>
     <br>
     <br>
-
-    <?php
-      echo $this->Html->link("Alterar Dados", array('controller' => 'Users','action'=> 'edit', $user['User']['id']), array( 'class' => 'input'))
-    ?>
 
     <?php echo $this->Form->end(); ?>
 

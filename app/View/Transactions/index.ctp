@@ -45,8 +45,8 @@
 			    	<?php 
 					if ($transaction['Transaction']['state'] == 0){
 						echo $this->Html->link('Confirmar Pagamento', ['controller' => 'transactions' , 'action' => 'payment_confirm', $transaction['Transaction']['id']], ['confirm' => 'Alterar o status deste pedido para PAGO?']);
-					} else if ($transaction['Transaction']['state'] == 1){
-						echo $this->Html->link('Informar Rastreio', ['controller' => 'transactions' , 'action' => 'tracking_code', $transaction['Transaction']['id']]);
+					} else {
+						echo $this->Html->link('Dados Bancários', ['controller' => 'users' , 'action' => 'view_user', $transaction['User']['id']]);
 					}
 					?>
 			    </td>

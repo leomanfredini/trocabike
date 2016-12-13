@@ -24,7 +24,7 @@ class ProductsController extends AppController {
 
 		$conditions = array('Product.active' => true);
 
-		$this->paginate = ['limit' => 9, 'conditions' => $conditions];
+		$this->paginate = ['limit' => 9, 'order' => ['Product.id' => 'DESC'], 'conditions' => $conditions];
 
 		$lista = $this->paginate();
 		$this->set('products', $lista);	

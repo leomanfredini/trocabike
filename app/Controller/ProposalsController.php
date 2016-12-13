@@ -129,6 +129,7 @@ class ProposalsController extends AppController {
 	    	$this->Session->write('price', $this->Proposal->field('price'));
 	    	$this->Session->write('proposal_id', $this->Proposal->field('id'));
 	    	$this->Session->write('frete', 0);
+	    	$this->Session->write('user_id', $this->Product->field('user_id'));
 	    	$this->redirect(['controller'=>'transactions','action' => 'checkout']);
 		} else {
 			$this->set('product', $this->Product->findById($this->Proposal->field('product_id')));

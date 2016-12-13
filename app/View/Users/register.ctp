@@ -152,6 +152,31 @@
       'type' => 'number'     
     )); ?>
     <br>
+    <hr>
+    <br>
+    <strong>Dados Bancários</strong>
+    <br><br>
+    <?php echo $this->Form->input('bank', array(
+      'label' => 'Nome do Banco',
+      'class' => 'field'
+    )); ?>
+
+     <?php echo $this->Form->input('agency', array(
+      'label' => 'Agência',
+      'class' => 'small-field',
+      'type' => 'number'     
+    )); ?>
+
+     <?php echo $this->Form->input('account', array(
+      'label' => 'Conta',
+      'class' => 'small-field',
+      'type' => 'number'     
+    )); ?>
+
+
+
+
+    <br>
     <?php echo $this->Recaptcha->display(); ?>
 
     <br><br>

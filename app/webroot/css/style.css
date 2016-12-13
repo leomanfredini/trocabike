@@ -145,10 +145,10 @@ a.bul { background:url(images/bul.gif) no-repeat 0 center; padding-left:10px;}
 .col-last { margin-right:0;}
 
 h3.ico { background-repeat:no-repeat; background-position:0 2px; padding:6px 0 8px 30px;}
-h3.ico1 { background-image:url(images/ico1.gif);}
-h3.ico2 { background-image:url(images/ico2.gif);}
-h3.ico3 { background-image:url(images/ico3.gif);}
-h3.ico4 { background-image:url(images/ico4.gif);}
+h3.ico1 { background-image:url(images/ico1.png);}
+h3.ico2 { background-image:url(images/ico2.png);}
+h3.ico3 { background-image:url(images/ico3.png);}
+h3.ico4 { background-image:url(images/ico4.png);}
 
 #footer { height:51px; background:#ebebeb; white-space:nowrap; line-height:50px; padding:0 15px; color:#7b7b7b; margin-top:10px;}
 #footer a{ color:#7b7b7b; text-decoration: none;}

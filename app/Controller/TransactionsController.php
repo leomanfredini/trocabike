@@ -143,6 +143,10 @@ class TransactionsController extends AppController {
 
 			//Desativa o produto após a venda
 			//$this->Product->saveField('active', 0);
+			
+			if ($this->Session->read('proposal_id') != null){
+				$this->Proposal->saveField('state', 3);
+			}
 
 			$this->redirect(['controller'=>'transactions','action' => 'checkout_boleto']);
 								
@@ -263,6 +267,7 @@ class TransactionsController extends AppController {
 			}
 		} else {
 			$this->Flash->error('Sem premissão para acessar esta área!');
+			$this->redirect($this->referer());
 		}	
 	}
 

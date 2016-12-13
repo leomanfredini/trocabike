@@ -18,12 +18,12 @@
 <!-- End Cart -->
 
 <!-- Navigation -->
-<div id="navigation">
+<!-- <div id="navigation">
     <ul>
         <li><a href="#" class="active">Home</a></li>
         <li><a href="#">Suporte</a></li>      
         <li><a href="#">Sobre Nós</a></li>
         <li><a href="#">Contato</a></li>
     </ul>
-</div>
+</div> -->
 <!-- End Navigation -->
